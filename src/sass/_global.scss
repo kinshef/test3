@@ -1,0 +1,102 @@
+@use 'vars' as *;
+@use 'mixin' as *;
+
+body {
+  background-color: $white;
+  color: $white;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: $ff;
+  line-height: 26px;
+
+  &.hidden {
+    overflow: hidden;
+  }
+}
+
+main {
+  overflow-x: hidden;
+}
+
+html{
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[class] {
+  list-style: none;
+}
+
+li {
+  display: flex;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a {
+  color: inherit;
+  &:active,
+  &:focus,
+  &:hover {
+    color: inherit;
+  }
+}
+
+.container {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}

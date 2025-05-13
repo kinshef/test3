@@ -1,0 +1,6 @@
+@mixin iconWH($w, $h: $w) {
+	max-width: $w;
+	max-height: $h;
+	width: 100%;
+	height: 100%;
+}

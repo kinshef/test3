@@ -1,0 +1,225 @@
+@use 'vars' as *;
+@use 'mixin' as *;
+
+.header {
+    position: fixed;
+    display: flex;
+    z-index: 2;
+    padding: 33px 0;
+    width: 100%;
+    transition: background 0.3s;
+    > div {
+        display: flex;
+        gap: 53px;
+        align-items: center;
+    }
+    &-logo {
+        line-height: 30px;
+        font-size: 32px;
+        font-weight: 800;
+    }
+    &-naw {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        transition: all 0.6s;
+        &__wrap {
+            display: flex;
+            gap: 40px;
+        }
+        &__title {
+            font-size: 20px;
+        }
+        &__mobile {
+            font-size: 12px;
+            line-height: 12px;
+            display: none;
+            white-space: pre;
+            pointer-events: none;
+            opacity: 0;
+            transition: 0.3s;
+            margin-right: 17px;
+        }
+        &__close {
+            display: none;
+        }
+        &__btn {
+            width: 25px;
+            height: 22px;
+            cursor: pointer;
+            margin-right: 8px;
+            align-items: center;
+            display: none;
+            transition: all 0.6s;
+            span {
+                width: 24px;
+                height: 2px;
+                border-radius: 2px;
+                background: $white;
+                position: relative;
+                transition: all 0.6s;
+                &:before, &:after {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: $white;
+                    position: absolute;
+                    transition: all 0.6s;
+                }
+                &:before{
+                    top: -9px;
+                }
+                &:after {
+                    bottom: -9px;
+                }
+            }
+        }
+    }
+    &-right {
+        font-size: 20px;
+        text-transform: uppercase;
+        position: relative;
+        margin-top: -4px;
+        &:after {
+            content: '\2197';
+            margin-left: 22px;
+        }
+        &:before {
+            content: '';
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 1px;
+            right: 0;
+            background: $white;
+        }
+    }
+}
+
+.main {
+    background: url('../images/1.png') no-repeat center center;
+    background-size: cover;
+    padding: 137px 0 62px;
+    h1 {
+        font-weight: 800;
+        font-size: 90px;
+        line-height: 90px;
+        text-align: center;
+        display: block;
+    }
+    &-item {
+        border-radius: 35px 0;
+        box-shadow: 0 4px 12px rgba($white, 0.3);
+        background: rgba($white, 0.3);
+        border: 3px solid $white;
+        padding: 11px 12px;
+        color: $white2;
+        display: flex;
+        align-items: center;
+        > span {
+            background: $green;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 34px;
+            width: 51px;
+            height: 51px;
+            flex-shrink: 0;
+            padding-top: 7px;
+            border: 1px solid $white;
+            margin-right: 10px;
+        }
+        > p {
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            right: -29px;
+            top: -24px;
+            width: 44px;
+            height: 61px;
+            background: url("data:image/svg+xml,%3Csvg width='44' height='61' viewBox='0 0 44 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_d_1_138)'%3E%3Cpath d='M21.5766 11C17.9444 11 15 13.9444 15 17.5766V40.8302C15 41.1521 15.4258 41.2667 15.5874 40.9884L27.2639 20.8789C29.8096 16.4945 26.6464 11 21.5766 11Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_1_138' x='0' y='0' width='43.163' height='60.1457' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='7.5'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.35 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_1_138'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_1_138' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E") no-repeat center / contain;
+            z-index: 1;
+        }
+    }
+}
+.swiper-navigation {
+    display: none;
+}
+.btn__popup {
+    margin: 0 auto;
+    max-width: 215px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: $white;
+    border-radius: 24px;
+    margin-top: 64px;
+    text-transform: uppercase;
+    font-size: 24px;
+    padding-top: 6px;
+}
+.modal {
+    padding: 96px 57px 96px 61px;
+    position: fixed;
+    transition: 0.5s;
+    top: 50%;
+    left: -100vw;
+    width: 77.5%;
+    background: $white;
+    color: $black;
+    z-index: 2;
+    border-radius: 32px;
+    transform: translate(-50%, -50%);
+    &.open {
+        left: 50%;
+        box-shadow: 0 0 0 9999px rgba($black, .5);
+    }
+    .icon {
+        max-width: 90px;
+        max-height: 80px;
+    }
+    &-wrap {
+        font-family: $ff2;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+    }
+    &__close {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        right: 36px;
+        top: 38px;
+        cursor: pointer;
+        &::before,
+        &::after {
+            content: "";
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform-origin: center;
+            width: 40px;
+            border-radius: 1px;
+            background-color: $black;
+            transform-origin: center;
+        }
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}
