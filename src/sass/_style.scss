@@ -193,6 +193,8 @@
         font-size: 20px;
         line-height: 28px;
         text-align: center;
+        max-height: calc(100vh - 200px);
+        overflow: auto;
     }
     &__close {
         display: flex;
